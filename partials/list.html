@@ -1,0 +1,7 @@
+Leita <input ng-model="movieSearch">
+
+<ul class="movieList">
+	<li ng-repeat="movie in movies | filter:movieSearch">
+		<p>{{movie.title}}</p>
+	</li>
+</ul>
