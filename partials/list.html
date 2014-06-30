@@ -1,7 +1,12 @@
-Leita <input ng-model="movieSearch">
+<input id="movieSearch" placeholder="Leita að bíómynd" ng-model="movieSearch">
 
-<ul class="movieList">
-	<li ng-repeat="movie in movies | filter:movieSearch">
-		<p>{{movie.title}}</p>
-	</li>
-</ul>
+<div class="row">
+	<div class="col-sm-4 col-md-3" ng-repeat="movie in movies | filter:movieSearch">
+		<div class="movie-wrapper">
+			<a href="#/{{movies.indexOf(movie)}}"><img ng-src="{{movie.image}}"/></a>
+		</div>
+		<div class="movieTitle">
+			<a href="#/{{movies.indexOf(movie)}}"><p>{{movie.title}}</p></a>
+		</div>
+	</div>
+</div>
