@@ -1,11 +1,11 @@
-<input id="movieSearch" placeholder="Leita að bíómynd" ng-model="movieSearch">
+<input type="text" class="form-control" id="movieSearch" placeholder="Leita..." ng-model="movieSearch">
 
 <div class="row">
-	<div class="col-sm-4 col-md-3" ng-repeat="movie in movies | filter:movieSearch">
-		<div class="movie-wrapper">
+	<div class="col-sm-4 col-md-3 movie-wrapper animate" ng-repeat="movie in movies | filter:movieSearch">
+		<div class="movie-poster">
 			<a href="#/{{movies.indexOf(movie)}}"><img ng-src="{{movie.image}}"/></a>
 		</div>
-		<div class="movieTitle">
+		<div class="movie-title">
 			<a href="#/{{movies.indexOf(movie)}}"><p>{{movie.title}}</p></a>
 		</div>
 	</div>

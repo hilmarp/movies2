@@ -2,12 +2,14 @@
 <html ng-app="movieApp">
 <head>
 	<meta charset="utf8">
-	<title>Bíómyndir</title>
+	<title>Hvað er í bíó?</title>
 	<script src="lib/angular.min.js"></script>
 	<script src="lib/angular-route.min.js"></script>
 	<script src="lib/angular-animate.min.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="custom.css">
@@ -15,7 +17,7 @@
 <body>
 	<div id="header-bar">
 		<div class="container">
-			<h1>Hvað er í bíó?</h1>
+			<h1><span id="title-movies">Kvikmyndir</span> <span id="title-showing">í sýningu</span></h1>
 		</div>
 	</div>
 	<div class="container">
@@ -24,7 +26,14 @@
 
 	</div>
 
+	<!-- <div id="footer-bar">
+		<div class="container">
+			<p><a href="http://www.eht.is">EHT</a> - <a href="http://apis.is">APIs</a></p>
+		</div>
+	</div> -->
+
 	<script src="lib/jquery-1.11.1.js"></script>
 	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/custom.js"></script>
 </body>
 </html>
