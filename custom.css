@@ -18,6 +18,10 @@ h1 {
 	border-top: 2px solid #F15500;
 }
 
+#header-bar a:hover {
+	text-decoration: none;
+}
+
 #title-movies {
 	color: #fff;
 }
@@ -111,6 +115,50 @@ h1 {
     -moz-transition: opacity .3s ease-out;
     -webkit-transition: opacity .3s ease-out;
     -o-transition: opacity .3s ease-out;
+}
+
+.detail-img {
+	border: 2px solid #F15500;
+}
+
+.detail-img {
+	width: 100%;
+}
+
+.detail-title {
+	font-weight: 700;
+	margin-bottom: 40px;
+}
+
+.detail-runtime {
+	color: #1943AD;
+}
+
+.detail-runtime .fa {
+	margin-right: 6px;
+}
+
+.detail-info-wrapper p {
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.detail-info-row {
+	margin-bottom: 30px;
+}
+
+.showtime-wrapper {
+	background-color: #DDDDDD;
+	margin-bottom: 15px;
+	padding: 22px 0 15px 0;
+}
+
+.showtime-wrapper p {
+	font-size: 18px;
+}
+
+.showtime-wrapper li {
+	font-size: 18px;
 }
 
 /*#footer-bar {

@@ -11,6 +11,7 @@ movieApp.controller('DetailsController', function ($scope, $http, $routeParams) 
 
 	var imdbLink;
 	var imdbLinkId;
+	var movieTitle;
 
 	// Get route params index
 	$scope.movieIndex = $routeParams.movieId;
@@ -19,6 +20,7 @@ movieApp.controller('DetailsController', function ($scope, $http, $routeParams) 
 	$http.get('http://apis.is/cinema').success(function (data) {
 		$scope.movies = data.results;
 		imdbLink = data.results[$scope.movieIndex].imdbLink;
+		movieTitle = (data.results[$scope.movieIndex].title).split(' ').join('%20');
 	});
 
 	// Get IMDB ID after async call has finished
@@ -35,5 +37,12 @@ movieApp.controller('DetailsController', function ($scope, $http, $routeParams) 
 			$scope.omdb = data;
 		});
 	}, 200);
+
+	// Delay this function
+	setTimeout(function() {
+		//Remove the tt from imdbID
+		var imdbIdNoTT = imdbLinkId.split("tt");
+		console.log(imdbIdNoTT[imdbIdNoTT.length - 1]);
+	}, 300);
 
 });

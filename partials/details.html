@@ -1,10 +1,28 @@
-<p>{{movies[movieIndex].released}}</p>
+<h2 class="detail-title">{{movies[movieIndex].title}}</h2>
 
-<img ng-src="{{movies[movieIndex].image}}"/>
+<div class="row detail-info-row">
+	<div class="col-md-4 detail-img-wrapper">
+		<img class="detail-img" ng-src="{{movies[movieIndex].image}}"/>
+	</div>
+	<div class="col-md-8 detail-info-wrapper">
+		<p class="detail-runtime"><i class="fa fa-clock-o"></i>{{omdb.Runtime}}</p>
+		<p><strong>Ár:</strong> {{movies[movieIndex].released}}</p>
+		<p><strong>Leikstjóri:</strong> {{omdb.Director}}</p>
+		<p><strong>Leikarar:</strong> {{omdb.Actors}}</p>
+		<p><strong>Land:</strong> {{omdb.Country}}</p>
+		<p><strong>Tegund:</strong> {{omdb.Genre}}</p>
+		<p><strong>Einkunn:</strong> {{omdb.imdbRating}} / {{omdb.imdbVotes}} atkvæði</p>
+		<p><strong>Leyfð:</strong> {{movies[movieIndex].restricted}}</p>
+	</div>
+</div>
 
-<p>{{omdb.Title}}</p>
-<p>{{omdb.Year}}</p>
-<p>{{omdb.Runtime}}</p>
-<p>{{omdb.Director}}</p>
-<p>{{omdb.Actors}}</p>
-<img src="{{omdb.Poster}}"/>
+<div class="row showtime-wrapper" ng-repeat="theater in movies[movieIndex].showtimes">
+	<div class="col-md-3">
+		<p>{{theater.theater}}</p>
+	</div>
+	<div class="col-md-9">
+		<ul class="list-inline">
+			<li ng-repeat="schedule in theater.schedule">{{schedule}}</li>
+		</ul>
+	</div>
+</div>
